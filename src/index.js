@@ -4,10 +4,13 @@ import './index.css';
 import App from './App';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
+import { EventContextProvider } from './context/EventContext';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <EventContextProvider>
+      <App />
+    </EventContextProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

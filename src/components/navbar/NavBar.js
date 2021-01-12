@@ -1,8 +1,10 @@
 import React from 'react'
 import { NavContainer,Span,NavWrapper,NavItem,Logo, Navlogo, NavBtn, Button } from './NavStyle'
 import EventsLogo from '../../assets/logo.png'
+import { useContextValue } from '../../context/EventContext'
 
 export default function NavBar() {
+    const {setIsFormOpen} = useContextValue()
     return (
         <NavContainer>
             <NavWrapper>
@@ -16,7 +18,7 @@ export default function NavBar() {
                     </NavItem>
 
                     <NavItem>
-                        <Button green>Create Event</Button>
+                        <Button green onClick={() => setIsFormOpen(true)}>Create Event</Button>
                     </NavItem>
 
                 </Navlogo>

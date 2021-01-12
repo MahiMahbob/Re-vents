@@ -1,7 +1,9 @@
 import React from 'react'
+import { useContextValue } from '../../context/EventContext'
 import { FormContainer,Form,Input, Button,ButtonGroup} from './FormStyle'
 
 export default function EventForm() {
+    const {setIsFormOpen} = useContextValue()
     return (
         <FormContainer>
             <p>Create New Event</p>
@@ -13,7 +15,7 @@ export default function EventForm() {
                 <Input type='text' placeholder='Venue' />
                 <Input type='Date' placeholder='Date' />
                 <ButtonGroup>
-                     <Button cancel>Cancel</Button>
+                     <Button cancel onClick={() => setIsFormOpen(false)}>Cancel</Button>
                      <Button>Create Event</Button>
                 </ButtonGroup>
             </Form>
