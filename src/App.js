@@ -1,10 +1,12 @@
 import React from 'react';
+import EventDashboard from './components/event-dashboard/EventDashboard';
 import NavBar from './components/navbar/NavBar';
 
 function App() {
   return (
     <>
-     <NavBar /> 
+     <NavBar />
+      <EventDashboard />
     </>
   );
 }
