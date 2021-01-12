@@ -1,4 +1,5 @@
 import React from 'react'
+import EventForm from '../event-form/EventForm'
 import EventList from '../eventlist/EventList'
 import { DashboardContainer,EventRightColumn,EventLeftColumn } from './EventDashStyle'
 
@@ -9,7 +10,7 @@ export default function EventDashboard() {
                 <EventList />
             </EventRightColumn>
             <EventLeftColumn>
-                ffff
+                <EventForm />
             </EventLeftColumn>
         </DashboardContainer>
     )
