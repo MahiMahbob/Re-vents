@@ -5,7 +5,7 @@ export const ItemSegment = styled.div`
     flex-direction: column;
     background: teal;
     margin-bottom: 10px;
-    width: 500px;
+    width: 600px;
     border-radius: 2px;
     box-shadow: -1px 1px 5px 0px rgba(0,0,0,0.75);
     -webkit-box-shadow: -1px 1px 5px 0px rgba(0,0,0,0.75);
@@ -63,13 +63,14 @@ export const Segment = styled.div`
     }
 
     button{
-    color: #fff;
-    background: black;
-    border: 1px solid #e0e1e2;
-    border-radius: 3px;
-    outline: 0;
-    cursor: pointer;
-    padding: 5px 10px
+        color: #fff;
+        background: black;
+        border: 1px solid #e0e1e2;
+        border-radius: 5px;
+        outline: 0;
+        cursor: pointer;
+        padding: 5px 13px;
+        margin: 15px 0px;
     }
 `
 export const Item = styled.div`

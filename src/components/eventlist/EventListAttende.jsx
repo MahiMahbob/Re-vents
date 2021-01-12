@@ -1,11 +1,10 @@
 import React from 'react'
 import { Item } from './EventListStyle'
-import User from '../../assets/user.jpg'
 
-export default function EventListAttende() {
+export default function EventListAttende({attende}) {
     return (
         <Item>
-            <img src={User} alt='item' />
+            <img src={attende.photoURL} alt='item' />
         </Item>
     )
 }
