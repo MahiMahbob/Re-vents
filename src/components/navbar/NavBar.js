@@ -4,7 +4,7 @@ import EventsLogo from '../../assets/logo.png'
 import { useContextValue } from '../../context/EventContext'
 
 export default function NavBar() {
-    const {setIsFormOpen} = useContextValue()
+    const {controlFormOpen} = useContextValue()
     return (
         <NavContainer>
             <NavWrapper>
@@ -18,7 +18,7 @@ export default function NavBar() {
                     </NavItem>
 
                     <NavItem>
-                        <Button green onClick={() => setIsFormOpen(true)}>Create Event</Button>
+                        <Button green onClick={controlFormOpen}>Create Event</Button>
                     </NavItem>
 
                 </Navlogo>

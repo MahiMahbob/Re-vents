@@ -7,7 +7,7 @@ export default function EventList() {
     return (
         <>
             {
-                samplData.map(event => <EventListItem events={event} key={event.id} />)
+                samplData.map(event => <EventListItem event={event} key={event.id} />)
             }
         </>
     )

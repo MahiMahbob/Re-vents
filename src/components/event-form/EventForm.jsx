@@ -4,9 +4,9 @@ import { useContextValue } from '../../context/EventContext'
 import { FormContainer,Form,Input, Button,ButtonGroup} from './FormStyle'
 
 export default function EventForm() {
-    const {setIsFormOpen,samplData,setSampleData} = useContextValue()
+    const {setIsFormOpen,samplData,setSampleData, selectedEvent,formValueUpdate} = useContextValue()
 
-    const initialValue = {
+    const initialValue = selectedEvent ?? {
         title: '',
         category: '',
         description: '',
@@ -19,6 +19,7 @@ export default function EventForm() {
 
     function handleSubmit(e){
         e.preventDefault()
+        selectedEvent ? formValueUpdate({...selectedEvent, ...formVal}) :
         setSampleData([...samplData, {...formVal, id: cuid(), hostedBy: 'Nora', hostPhotoURL: 'https://randomuser.me/api/portraits/men/20.jpg', attendees: []}])
         setIsFormOpen(false)
     }
@@ -31,7 +32,7 @@ export default function EventForm() {
     
     return (
         <FormContainer onSubmit={handleSubmit}>
-            <p>Create New Event</p>
+            {selectedEvent ? 'Edit Event' : <p>Create New Event</p>}
             <Form>
                 <Input type='text' name='title' value={formVal.title} onChange={handleChange} placeholder='Event Title' required />
                 <Input type='text' name='category' value={formVal.category} onChange={handleChange} placeholder='Category' />

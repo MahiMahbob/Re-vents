@@ -9,8 +9,11 @@ import {
 } from "./EventListStyle";
 import { MdAlarm, MdPlace } from "react-icons/md";
 import EventListAttende from "./EventListAttende";
+import { useContextValue } from "../../context/EventContext";
 
-export default function EventListItem({ events }) {
+export default function EventListItem({ event }) {
+  const {controlSelectedEvent,deleteEvent} = useContextValue()
+
   const {
     title,
     date,
@@ -19,7 +22,8 @@ export default function EventListItem({ events }) {
     venue,
     attendees,
     hostedBy,
-  } = events;
+  } = event;
+
   return (
     <ItemSegment>
       <ItemGroup>
@@ -44,7 +48,8 @@ export default function EventListItem({ events }) {
       </Segment>
       <Segment>
         <div>{description}</div>
-        <button>View</button>
+        <button onClick={() => controlSelectedEvent(event)}>View</button>
+        <button style={{backgroundColor: 'red'}} onClick={() => deleteEvent(event.id)}>Delete</button>
       </Segment>
     </ItemSegment>
   );

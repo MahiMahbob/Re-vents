@@ -5,14 +5,14 @@ import EventList from '../eventlist/EventList'
 import { DashboardContainer,EventRightColumn,EventLeftColumn } from './EventDashStyle'
 
 export default function EventDashboard() {
-    const {isFormOpen} = useContextValue()
+    const {isFormOpen, selectedEvent} = useContextValue()
     return (
         <DashboardContainer>
             <EventRightColumn>
                 <EventList />
             </EventRightColumn>
             <EventLeftColumn>
-                {isFormOpen && <EventForm />}
+                {isFormOpen && <EventForm key={selectedEvent ? selectedEvent.id : null} />}
             </EventLeftColumn>
         </DashboardContainer>
     )
