@@ -1,9 +1,9 @@
-import React, { useState } from 'react'
-import { sampleData } from '../../assets/SampleData'
+import React from 'react'
+import { useContextValue } from '../../context/EventContext'
 import EventListItem from './EventListItem'
 
 export default function EventList() {
-    const [samplData] = useState(sampleData)
+    const {samplData} = useContextValue()
     return (
         <>
             {
